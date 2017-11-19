@@ -3,14 +3,14 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="css/style2.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
 	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	<style>
 						button.accordion {
 						    background-color: #dcdcdc;
@@ -68,9 +68,11 @@
 									$result = mysqli_query($connect,$sql);
 									$totalprice =0;
 									$count = 0;
+									$eachprice = 0;
 									while($row = mysqli_fetch_assoc($result)){
 										$count++;
-										$totalprice = $totalprice + $row['P_price'];
+										$eachprice = $row['P_price'] * $row['C_qty'];
+										$totalprice = $totalprice + $eachprice;
 										
 									}
 

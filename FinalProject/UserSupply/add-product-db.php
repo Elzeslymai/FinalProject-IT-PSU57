@@ -1,9 +1,11 @@
 
 <?php
+session_start();
+echo $_SESSION['username'];
 	require('Menu-side-Supply.php');
  	
 	$connect = mysqli_connect("localhost","root","","hotelsupport");
-	$sql = 'insert into product values (null,"'.$_POST['ProductName'].'","'.$_POST['Catagories'].'","'.$_POST['Grade'].'","'.$_POST['Price'].'","'.$_POST['Detail'].'","'.$_POST['shipment'].'","'.$_POST['Fee'].'","'.date("y-m-d").'")';
+	$sql = 'insert into product values (null,"'.$_SESSION['username'].'","'.$_POST['U_company_name'].'","'.$_POST['ProductName'].'","'.$_POST['Catagories'].'","'.$_POST['Grade'].'","'.$_POST['Price'].'","'.$_POST['Detail'].'","'.$_POST['shipment'].'","'.$_POST['Fee'].'","'.date("y-m-d").'")';
 	$result = mysqli_query($connect,$sql);
 	if(!$result){
 		echo" <script language='javascript'>
@@ -69,7 +71,7 @@
 						</div>
 						<div class="modal-footer">
 							<a href="/FinalProject/UserSupply/add-product.php"><button type="button" class="btn btn-default" >Add Other</button></a>
-							<a href="/FinalProject/UserSupply/product-list.php"><button type="button" class="btn btn-info">Go to List</button></a>
+							<a href="/FinalProject/UserSupply/product.php"><button type="button" class="btn btn-info">Go to List</button></a>
 							
 						</div>
 					</div> 

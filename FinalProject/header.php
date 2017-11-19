@@ -8,7 +8,9 @@
 <link rel="stylesheet" type="text/css" href="css/style1.css">
 <link rel="shortcut icon" href="images/icon.png" />
 <link rel="stylesheet" href="css/bootstrap.css" >
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -45,7 +47,7 @@
 <!-- start menu -->     
 <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+
 <!-- end menu -->
 <!-- top scrolling -->
 <script type="text/javascript" src="js/move-top.js"></script>

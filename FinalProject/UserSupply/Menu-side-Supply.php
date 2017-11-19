@@ -416,7 +416,7 @@
                 </a>
             </li>  
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hotel User <b class="fa fa-angle-down"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Supply User <b class="fa fa-angle-down"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="edit-profile.php"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
                     <li><a href="edit-password.php"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>

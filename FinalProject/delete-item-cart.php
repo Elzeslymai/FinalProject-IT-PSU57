@@ -12,7 +12,7 @@
 			}
 ?>
 <?php 
-	@ini_set('display_errors', '0');
+	//@ini_set('display_errors', '0');
   	require('header.php');
   	require('Menu-side.php');
 	
@@ -21,9 +21,7 @@
 	$connect = mysqli_connect("localhost","root","","hotelsupport");
 	$sql = 'delete from cart where cart_id = "'.$_POST['deleteid'].'"';
 	$result = mysqli_query($connect,$sql);
-	while($row = mysqli_fetch_assoc($result)){
-
-		if(!$result){
+	if(!$result){
 			echo" <script language='javascript'>
 					$(function() { 
 						$('#notify1').click();
@@ -32,19 +30,15 @@
 				  </script>
 
 			";
-		}else{
+	}else{
 			echo" <script language='javascript'>
-					$(function() { 
-						$('#notify').click();
-					});
+					document.location='/FinalProject/checkout.php';
 
 				  </script>
 
 			";
-		}
-
-
 	}
+	
 	mysqli_close($connect);
 
 ?>
@@ -81,10 +75,10 @@
 								<span aria-hidden="true">×</span>
 								<span class="sr-only">Close</span>
 							</button>
-							<h4 class="modal-title">Add User</h4>
+							<h4 class="modal-title">Delete Item</h4>
 						</div>
 						<div class="modal-body">
-							<p><i class="glyphicon glyphicon-remove"></i> Can't Add user to system!</p>
+							<p><i class="glyphicon glyphicon-remove"></i> Can't Delete Item!</p>
 							
 						</div>
 						<div class="modal-footer">

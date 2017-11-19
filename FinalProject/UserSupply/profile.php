@@ -241,7 +241,7 @@
 							<br><br><br><br>
 	                        <?php
 								$connect = mysqli_connect("localhost","root","","hotelsupport");
-								$sql = 'select * from user where U_username="'.$_SESSION['username'].'"';
+								$sql = 'select * from user where U_id="'.$_SESSION['username'].'"';
 								$result = mysqli_query($connect,$sql);
 								while($row = mysqli_fetch_assoc($result)){
 									echo '<p class="col-sm-offset-1"><label>Username.</label><span class="current_data col-sm-offset-1"><span id="ContentPlaceHolder1_litUsername">';

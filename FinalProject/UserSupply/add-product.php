@@ -38,6 +38,18 @@
 		    
 		  </div>
 		</div>
+		<?php
+			$connect = mysqli_connect("localhost","root","","hotelsupport");
+			$sql = 'select U_company_name from user where U_id = "'.$_SESSION['username'].'"';
+			$result = mysqli_query($connect,$sql);
+			$row = mysqli_fetch_assoc($result);
+			if(!$result){
+
+			}else{
+				echo '<input type="hidden" value="'.$row['U_company_name'].'" name="U_company_name">';
+			}
+			mysqli_close($connect);
+		?>
 
 		<!-- Text input-->
 	<div class="form-group">

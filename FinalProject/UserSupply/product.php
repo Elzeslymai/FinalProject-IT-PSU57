@@ -65,7 +65,7 @@
                     <div class="panel-body">
                     	<?php
                             $connect = mysqli_connect("localhost","root","","hotelsupport");
-                            $sql = 'select * from product';
+                            $sql = 'select * from product where U_id="'.$_SESSION['username'].'"';
                             $result = mysqli_query($connect,$sql);
                             while($row = mysqli_fetch_assoc($result)){
                                 echo '<div class="col-sm-2">
