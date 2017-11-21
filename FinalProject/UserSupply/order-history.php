@@ -27,536 +27,118 @@
  		require('Menu-side-Supply.php');
  	?>
  	<br>
- 	<h1><span class="glyphicon glyphicon-time col-sm-offset-1"></span> ORDER HISTORY</h1>
 
- 		<div class="col-md-12">
+    <h1><span class="glyphicon glyphicon-time col-sm-offset-1"></span> ORDER HISTORY</h1>
+
+        <div class="col-md-12">
             <div class="col-md-10 col-sm-offset-1 ">
                 <div class="panel panel-default">
                     <div class="panel-heading ">
-                    	<div class="col-sm-3">
-                    		<b>
-                			    Product Number			
-                    		</b>
-                    		
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                			   	Supplier		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                		    	Date			
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                			   	Status			
-                    		</b>
-                    	</div>
-                    	<br>
+                        <div class="col-sm-3">
+                            <b>
+                                PAYMENT NUMBER          
+                            </b>
+                            
+                        </div>
+                        <div class="col-sm-3">
+                            <b>
+                                    BUYER   
+                            </b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b>
+                                PAYMENT DATE            
+                            </b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b>
+                                STATUS            
+                            </b>
+                        </div>
+                        <br>
                     </div>
                     <div class="panel-body">
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0001
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0002
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0003
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0004
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0005
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0006
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0007
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0008
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0009
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0010
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0011
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0012
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0013
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0014
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0015
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0016
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0017
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0018
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0019
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Renaissence phuket hotel		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-success">
-                    		<b>
-                					Complete
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                    			<u>
-                    				<a href="">
-                			    		HS0020
-                    				</a>
-                    			</u>
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				Royal city phuket		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3">
-                    		<b>
-                				20/4/2560		
-                    		</b>
-                    	</div>
-                    	<div class="col-sm-3 btn-danger">
-                    		<b>
-                					Cancle
-                    		</b>
-                    	</div>
-                    	<div>&nbsp;</div>
+
+                    <?php
+                        $connect = mysqli_connect("localhost","root","","hotelsupport");
+                        $sql1 = 'select * from user where U_id="'.$_SESSION['username'].'"';
+                        $result1 = mysqli_query($connect,$sql1);
+                        $row1 = mysqli_fetch_assoc($result1);
+
+                        $sql = 'select * from order1 where Supply_name="'.$row1['U_company_name'].'"';
+                        $result = mysqli_query($connect,$sql);
+                        while($row = mysqli_fetch_assoc($result)){
+
+                            $sql2 = 'select * from user where U_id="'.$row['U_id'].'"';
+                            $result2 = mysqli_query($connect,$sql2);
+                            $row2 = mysqli_fetch_assoc($result2);
+                            if($row['status'] == "Cancle"){
+                                echo '
+                                    <div class="col-sm-3">
+                                        <b>
+                                            <u>
+                                                <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                '.$row['invoiceNo'].'
+                                                </a>
+                                            </u>
+                                        </b>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <b>
+                                        '.$row2['U_company_name'].'
+                                        </b>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <b>
+                                            '.$row['date'].'       
+                                        </b>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="row">
+                                                
+                                                STATUS : 
+                                                    <button type="button" class="btn btn-danger" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                    &nbsp;&nbsp;
+                                                    
+                                        </div>
+                                    </div>
+                                    <div>&nbsp;</div>';
+                                }else if($row['status'] == "Complete"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row2['U_company_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    STATUS : 
+                                                        <button type="button" class="btn btn-success" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>
+                                        <div>&nbsp;</div>';
+                                }
+
+                        }
+
+                        mysqli_close($connect);
+                    ?>
                     </div>
                 </div>
             </div>

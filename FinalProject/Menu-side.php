@@ -77,14 +77,17 @@
 									}
 
 									mysqli_close($connect);
+									$tax = 0;
+									$tax += ($totalprice*7)/100;
+									$totalprice += $tax;
 									echo'
 				                            <h3>Price Details</h3>
 				                            <span>Total</span>
 				                            <span class="total1">'.$totalprice.'</span>
-				                            <span>Discount</span>
-				                            <span class="total1">10%</span>
-				                            <span>Delivery Charges</span>
-				                            <span class="total1">00.00</span>
+				                            <span>Tax rate</span>
+				                            <span class="total1">7%</span>
+				                            <span>Tax</span>
+				                            <span class="total1">'.$tax.'฿</span>
 				                            <div class="clearfix"></div>				 
 				                        </div>
 				                        <hr class="featurette-divider">
@@ -96,7 +99,7 @@
 				                    ';
 		                        ?>
 		                        <div class="clearfix"></div>
-		                        <a class="order" href="invoice.php" style="width: 240px;">Make invoice</a>
+		                        <a class="order" href="add-order-db.php" style="width: 240px;">Make invoice</a>
 		                    </div>
                     	</div>
                     </div>

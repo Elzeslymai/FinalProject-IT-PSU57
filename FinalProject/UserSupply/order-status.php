@@ -27,152 +27,93 @@
  		require('Menu-side-Supply.php');
  	?>
  	<br>
- 	<h1><span class="glyphicon glyphicon-check col-sm-offset-1"></span>  ORDER STATUS</h1>
- 	<div class="container">
-
-        <div class="row">
-            <br>
-
-            <div class="col-md-12">
-                <div class="col-md-10 col-sm-offset-1 ">
-                    <!--SHIPPING METHOD-->
-                    <div class="panel panel-default">
-                        <div class="panel-heading text-center"><h4>Order Status</h4></div>
-                        <div class="panel-body">
-                           <table class="table borderless">
-                            <thead>
-
-                            </thead>
-                            <tbody>
-                                <!-- foreach ($order->lineItems as $line) or some such thing here -->
-                                <tr>
-                                    <td >
-                                        <div align="center">
-                                            <a href="#"><img src="http://www.weddinghitz.com/wp-content/uploads/old/image/renaissance_01.jpg" style="height: 50px;"> 
-                                            <h5><u>HS0001</u></h5></a>
-                                        </div>
-                                    </td>
-                                    <td >
-                                        <p><b style="color: #d93c21;">Renaissance phuket hotel</b></p>
-                                        <p>เวลาส่งสินค้า 9.00-17.00</p>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td >
-                                        <b style="color: #d93c21;">วันรับสินค้า</b>
-                                                <div class="input-group date" data-provide="datepicker">
-                                                    <input type="text" value="20/04/2017" disabled="disabled" class="form-control" title="กำหนดวันรับสินค้า">
-                                                    <div class="input-group-addon">
-                                                        <span class="glyphicon glyphicon-th"></span>
-                                                    </div>
-                                                </div>
-                                    </td>
-                                    <td>
-                                    	<a href="/FinalProject/UserSupply/update-status.php"><button type="button" class="btn " style="width: 110px; margin-top: 22px;">Update Status</button></a>
-                                    </td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td class="col-md-3">
-                                        <div class="media">
-                                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/FinalProject/images/banner1.jpg" style="width: 72px; height: 72px;"> </a>
-                                             <div class="media-body">
-                                                 <h5 class="media-heading">&nbsp; เนื้อปลาแซลม่อน</h5>
-                                                 <h5 class="media-heading">&nbsp; Grade : A</h5>
-                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center" >฿150.00</td>
-                                    <td class="text-center">10</td>
-                                    <td class="text-right">฿1500.00</td>
-                                    <td class="text-right"><button type="button" class="btn btn-info" style="width: 90px;">Shipment</button></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-3">
-                                        <div class="media">
-                                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/FinalProject/images/banner2.jpg" style="width: 72px; height: 72px;"> </a>
-                                             <div class="media-body">
-                                                 <h5 class="media-heading">&nbsp; ไข่ปลาแซลม่อน</h5>
-                                                 <h5 class="media-heading">&nbsp; Grad : B</h5>
-                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">฿250.</td>
-                                    <td class="text-center">5</td>
-                                    <td class="text-right"> ฿1250.00</td>
-                                    <td class="text-right"><button type="button" class="btn btn-warning" style="width: 90px;">Payment</button></td>
-                                    <td></td>
-                                </tr>
-                                <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                                <tr>
-                                    <td >
-                                        <div align="center">
-                                            <a href="#"><img src="http://www.tripchiangmai.com/images-data/hotel-detail/logo-013572z34d.jpg" style="height: 50px;"> 
-                                            <h5><u>HS0002</u></h5></a>
-                                        </div>
-                                    </td>
-                                    <td >
-                                        <p><b style="color: #d93c21;">Royal city phuket</b></p>
-                                        <p>เวลาส่งสินค้า 8.00-18.00 </p>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td >
-                                        <b style="color: #d93c21;">วันรับสินค้า</b>
-                                                <div class="input-group date" data-provide="datepicker">
-                                                    <input type="text" value="15/05/2017" disabled="disabled" class="form-control" title="กำหนดวันรับสินค้า">
-                                                    <div class="input-group-addon">
-                                                        <span class="glyphicon glyphicon-th"></span>
-                                                    </div>
-                                                </div>
-                                    </td>
-                                    <td>
-                                    	<a href="/FinalProject/UserSupply/update-status.php"><button type="button" class="btn " style="width: 110px; margin-top: 22px;">Update Status</button></a>
-                                    </td>
-                                </tr>
+    <h1><span class="glyphicon glyphicon-check col-sm-offset-1"></span>  ORDER STATUS</h1>
+    
+        <div class="col-md-12">
+            <div class="col-md-10 col-sm-offset-1 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <div class="col-sm-3">
+                            <b>
+                                PAYMENT NUMBER          
+                            </b>
                             
-                                <tr>
-                                    <td class="col-md-3">
-                                        <div class="media">
-                                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/FinalProject/images/banner1.jpg" style="width: 72px; height: 72px;"> </a>
-                                             <div class="media-body">
-                                                 <h5 class="media-heading">&nbsp; ไข่ปลาแซลม่อน</h5>
-                                                 <h5 class="media-heading">&nbsp; Grad : B</h5>
-                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">฿250.</td>
-                                    <td class="text-center">5</td>
-                                    <td class="text-right"> ฿1250.00</td>
-                                    <td class="text-right"><button type="button" class="btn btn-info" style="width: 90px;">Shipment</button></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-3">
-                                        <div class="media">
-                                             <a class="thumbnail pull-left" href="#"> <img class="media-object" src="/FinalProject/images/banner2.jpg" style="width: 72px; height: 72px;"> </a>
-                                             <div class="media-body">
-                                                 <h5 class="media-heading">&nbsp; ไข่ปลาแซลม่อน</h5>
-                                                 <h5 class="media-heading">&nbsp; Grad : B</h5>
-                                             </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-center">฿250.</td>
-                                    <td class="text-center">5</td>
-                                    <td class="text-right"> ฿1250.00</td>
-                                    <td class="text-right"><button type="button" class="btn btn-success" style="width: 90px;">Complete</button></td>
-                                    <td></td>
-                                </tr>
-                                <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                            </tbody>
-                        </table> 
                         </div>
+                        <div class="col-sm-3">
+                            <b>
+                                    BUYER   
+                            </b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b>
+                                PAYMENT DATE            
+                            </b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b>
+                                STATUS            
+                            </b>
+                        </div>
+                        <br>
                     </div>
-                    <!--SHIPPING METHOD END-->
+                    <div class="panel-body">
+                    <?php
+                        $connect = mysqli_connect("localhost","root","","hotelsupport");
+                        $sql1 = 'select * from user where U_id="'.$_SESSION['username'].'"';
+                        $result1 = mysqli_query($connect,$sql1);
+                        $row1 = mysqli_fetch_assoc($result1);
+
+                        $sql = 'select * from order1 where Supply_name="'.$row1['U_company_name'].'"';
+                        $result = mysqli_query($connect,$sql);
+                        while($row = mysqli_fetch_assoc($result)){
+
+                            $sql2 = 'select * from user where U_id="'.$row['U_id'].'"';
+                            $result2 = mysqli_query($connect,$sql2);
+                            $row2 = mysqli_fetch_assoc($result2);
+
+                            if($row['status'] != "Cancle" && $row['status'] != "Wait for Accept" && $row['status'] != "Complete"){
+                                echo '
+                                    <div class="col-sm-3">
+                                        <b>
+                                            <u>
+                                                <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                '.$row['invoiceNo'].'
+                                                </a>
+                                            </u>
+                                        </b>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <b>
+                                        '.$row2['U_company_name'].'
+                                        </b>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <b>
+                                            '.$row['date'].'       
+                                        </b>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="row">
+                                                <form id="update'.$row['order_id'].'" method="post" action="update-status.php">
+                                                STATUS : 
+                                                    <button type="button" class="btn btn-warning" style="width: 135px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                    &nbsp;&nbsp;
+                                                    <input type="hidden" name="updatestatusorder" value="'.$row['order_id'].'">
+                                                    <button type="submit" form="update'.$row['order_id'].'" class="btn btn-info" style="width: 140px;">UPDATE STATUS</button>
+                                                </form>
+                                        </div>
+                                    </div>
+                                    <div>&nbsp;</div>';
+                                }
+
+                        }
+
+                        mysqli_close($connect);
+                    ?>
+                        
+                    </div>
                 </div>
-                </div>
-                </div>
-</div>
+            </div>
+        </div>        
  </body>
  </html>

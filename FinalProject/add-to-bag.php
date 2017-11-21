@@ -31,7 +31,7 @@
 		$Pgrad = $row['P_grade'];
 		
 
-		$sql1= 'insert into cart values(null,"'.$id.'","'.$supplyname.'","'.$Pid.'","'.$Pname.'","'.$Pgrad.'","'.$Pprice.'","'.$Pfee.'","1")';
+		$sql1= 'insert into cart values(null,"'.$id.'","'.$supplyname.'","'.$Pid.'","'.$Pname.'","'.$Pgrad.'","'.$Pprice.'","'.$Pfee.'","1","none")';
 
 		$result1 = mysqli_query($connect,$sql1);
 		if(!$result){

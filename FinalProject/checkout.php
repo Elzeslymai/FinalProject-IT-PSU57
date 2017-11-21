@@ -43,14 +43,17 @@
                                     }
 
                                     mysqli_close($connect);
+                                    $tax = 0;
+                                    $tax += ($totalprice*7)/100;
+                                    $totalprice += $tax;
                                     echo'
                                             <h3>Price Details</h3>
                                             <span>Total</span>
                                             <span class="total1">'.$totalprice.'</span>
-                                            <span>Discount</span>
-                                            <span class="total1">10%</span>
-                                            <span>Delivery Charges</span>
-                                            <span class="total1">00.00</span>
+                                            <span>Tax rate</span>
+                                            <span class="total1">7%</span>
+                                            <span>Tax</span>
+                                            <span class="total1">'.$tax.'฿</span>
                                             <div class="clearfix"></div>                 
                                         </div>
                                         <hr class="featurette-divider">
@@ -62,7 +65,7 @@
                                     ';
                                 ?>
                         <div class="clearfix"></div>
-                        <a class="order" href="#" id="makeInvoice">Make invoice</a>
+                        <a class="order" href="add-order-db.php" id="makeInvoice">Make invoice</a>
 
                     </div>
 
@@ -80,7 +83,9 @@
                                 $id = 0;
                                 $id1 = 1;
                                 while($row1 = mysqli_fetch_assoc($result1)){
-                                    
+                                    $sql2 ='select Pick_up_date from cart where Supply_name="'.$row1['Supply_name'].'" and U_id="'.$_SESSION['username'].'"';
+                                    $result2 = mysqli_query($connect,$sql2);
+                                    $row2 = mysqli_fetch_assoc($result2);
                                     echo'
                                     <div class="panel" style="border-color: orange;" id="Po1">
                                         <div class="panel-heading">
@@ -95,15 +100,22 @@
                                                 <div class="col-sm-2">
                                                     <b style="color: #d93c21;">กำหนดวันรับสินค้า</b>
                                                     <div class="input-group date" data-provide="datepicker">
-
-                                                            <input type="text" class="form-control" id="'.$id.'" title="กำหนดวันรับสินค้า">
-                                                        <div class="input-group-addon ">
-                                                            <a href="#" ><span ">confirm</span></a>
-                                                        </div>
+                                                        <form action="update-pickup-cart.php" method="post" name="'.$row1['Supply_name'].'">
+                                                            <input name="'.$row1['Supply_name'].'" type="text" class="form-control" id="'.$id.'" title="กำหนดวันรับสินค้า" value="'.$row2['Pick_up_date'].'">
+                                                        </form>    
+                                                            <div class="input-group-addon ">
+                                                                <a href="javascript: '.$row1['Supply_name'].'()" ><span ">confirm</span></a>
+                                                            </div>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>';
+                                        </div>
+                                        <script> 
+                                            function '.$row1['Supply_name'].'() {   
+                                                document.'.$row1['Supply_name'].'.submit();
+                                            }  
+                                         </script>';
 
                                         $sql = 'select * from cart where Supply_name="'.$row1['Supply_name'].'" and U_id="'.$_SESSION['username'].'"';
                                         $result = mysqli_query($connect,$sql);
@@ -150,7 +162,7 @@
                                                                                 <span class="input-group-btn data-dwn">
                                                                                     <button type="submit" form="qty'.$row['cart_id'].'" id="minus'.$row['cart_id'].'" class="btn btn-warning btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
                                                                                 </span>
-                                                                                <form action="update-cart.php" method="post" id="qty'.$row['cart_id'].'">
+                                                                                <form action="update-qty-cart.php" method="post" id="qty'.$row['cart_id'].'">
                                                                                     <input type="text" class="form-control text-center" value="'.$row['C_qty'].'" min="1" max="40" style="width:50px;" disabled>
                                                                                     <input type="hidden" name="'.$row['cart_id'].'" class="form-control text-center" value="'.$row['C_qty'].'" min="1" max="40" style="width:50px;" >
 
