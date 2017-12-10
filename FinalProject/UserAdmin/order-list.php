@@ -68,8 +68,8 @@
                             $result2 = mysqli_query($connect,$sql2);
                             $row2 = mysqli_fetch_assoc($result2);
 
-                            
-                                echo '
+                            if($row['status'] == "Wait for Accept"){
+                                    echo '
                                     <div class="col-sm-3">
                                         <b>
                                             <u>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <b>
-                                        '.$row2['U_company_name'].'
+                                        '.$row['Supply_name'].'
                                         </b>
                                     </div>
                                     <div class="col-sm-3">
@@ -91,17 +91,181 @@
                                     </div>
                                     <div class="col-sm-3">
                                         <div class="row">
-                                                
-                                                STATUS : 
-                                                    <button type="button" class="btn btn-warning" style="width: 135px; margin-right: 0px" disabled>'.$row['status'].'</button>
-                                                    &nbsp;&nbsp;
-                                                    
+                                                                                                 
+                                                    <button type="button" class="btn" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                   
                                         </div>
                                     </div>';
+                                    echo '                     
+                                        <div>&nbsp;</div>
+                                    ';
+                            }
+                            if($row['status'] == "Accept"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-success" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                            }
+                            if($row['status'] == "Order Preparation"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-warning" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                            }   
+                            if($row['status'] == "Shipment"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-info" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                            }
+                            if($row['status'] == "Cancle"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-danger" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                            }
+                            if($row['status'] == "Complete"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-success" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                            }
 
-                                echo '                     
-                                <div>&nbsp;</div>
-                            ';
                         }
 
                         mysqli_close($connect);

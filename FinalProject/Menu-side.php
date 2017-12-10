@@ -66,23 +66,25 @@
 									$connect = mysqli_connect("localhost","root","","hotelsupport");
 									$sql = 'select * from cart where U_id="'.$_SESSION['username'].'"';
 									$result = mysqli_query($connect,$sql);
+									$totalprice1 =0;
 									$totalprice =0;
 									$count = 0;
 									$eachprice = 0;
 									while($row = mysqli_fetch_assoc($result)){
 										$count++;
 										$eachprice = $row['P_price'] * $row['C_qty'];
-										$totalprice = $totalprice + $eachprice;
+										$totalprice1 = $totalprice1 + $eachprice;
 										
 									}
 
 									mysqli_close($connect);
+									$totalprice =$totalprice1;
 									$tax = 0;
-									$tax += ($totalprice*7)/100;
-									$totalprice += $tax;
+									$tax += ($totalprice1*7)/100;
+									$totalprice1 += $tax;
 									echo'
 				                            <h3>Price Details</h3>
-				                            <span>Total</span>
+				                            <span>Price</span>
 				                            <span class="total1">'.$totalprice.'</span>
 				                            <span>Tax rate</span>
 				                            <span class="total1">7%</span>
@@ -93,13 +95,13 @@
 				                        <hr class="featurette-divider">
 				                        <ul class="total_price">
 				                           <li class="last_price"> <h4>TOTAL</h4></li>	
-				                           <li class="last_price"><span>'.$totalprice.'฿ </span></li>
+				                           <li class="last_price"><span>'.$totalprice1.'฿ </span></li>
 				                           <div class="clearfix"> </div>
 				                        </ul> 
 				                    ';
 		                        ?>
 		                        <div class="clearfix"></div>
-		                        <a class="order" href="add-order-db.php" style="width: 240px;">Make invoice</a>
+		                        <a class="order" href="checkout.php" style="width: 240px;">Make invoice</a>
 		                    </div>
                     	</div>
                     </div>

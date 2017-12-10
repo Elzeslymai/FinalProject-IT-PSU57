@@ -112,11 +112,12 @@
                                                 
                                         </div>
                                     </div>';
-                                }
-
-                                echo '                     
+                                    echo '                     
                                 <div>&nbsp;</div>
                             ';
+                                }
+
+                                
                         }
 
                         mysqli_close($connect);

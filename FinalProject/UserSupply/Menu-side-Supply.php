@@ -440,7 +440,6 @@
                 </li>
 				<li ><a href="order-list.php">Order List<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt"></span></a></li>
 				<li ><a href="order-status.php">Order Status<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-check"></span></a></li>
-				<li ><a href="invoice-bill.php">Invoice Bill<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-usd"></span></a></li>
                <li class=""><a href="order-history.php">Order History<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-time"></span></a></li>
 				<li ><a href="contact-admin.php">Contact Admin<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<!--<li class="dropdown">

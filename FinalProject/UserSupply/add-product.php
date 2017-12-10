@@ -28,13 +28,13 @@
  	?>
  	<br>
  	<h1><span class="glyphicon glyphicon-plus-sign col-sm-offset-1"></span> ADD PRODUCT</h1>
- 	<form class="form-horizontal" name="form2" method="POST" action="/FinalProject/UserSupply/add-product-db.php" onSubmit="JavaScript:return fncSubmit();">
+ 	<form class="form-horizontal" name="form2" method="POST" action="/FinalProject/UserSupply/add-product-db.php" onSubmit="JavaScript:return fncSubmit();" enctype="multipart/form-data">
 
 
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="ProductDescription">Product Picture (250x160)</label>  
 		  <div class="col-md-5">
-		  <input type="file" name="fileToUpload" id="fileToUpload" >
+		  <input type="file" name="fileToUpload" id="fileToUpload">
 		    
 		  </div>
 		</div>
@@ -95,7 +95,7 @@
 
 	<!-- Text input-->
 	<div class="form-group">
-	  <label class="col-md-4 control-label" for="FeaturesOne">Price / Kg.(฿)</label>  
+	  <label class="col-md-4 control-label" for="FeaturesOne">Price / Piece.(฿)</label>  
 	  <div class="col-md-5">
 	  <input id="Price" name="Price" type="text" placeholder="Enter price" class="form-control input-md" >
 	    

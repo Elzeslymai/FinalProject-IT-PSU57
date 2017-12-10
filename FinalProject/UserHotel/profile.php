@@ -246,6 +246,8 @@
 								$sql = 'select * from user where U_id="'.$_SESSION['username'].'"';
 								$result = mysqli_query($connect,$sql);
 								while($row = mysqli_fetch_assoc($result)){
+									echo '<p class="col-sm-offset-1"><label>Email.</label><span class="current_data col-sm-offset-1"><span id="ContentPlaceHolder1_litUsername">';
+									echo $row['U_email'];
 									echo '<p class="col-sm-offset-1"><label>Username.</label><span class="current_data col-sm-offset-1"><span id="ContentPlaceHolder1_litUsername">';
 									echo $row['U_username'];
 									echo'</span></span></p>
@@ -275,10 +277,13 @@
 													<br><br><br><br>
 							<?php
 								$connect = mysqli_connect("localhost","root","","hotelsupport");
-								$sql = 'select * from user where U_username="'.$_SESSION['username'].'"';
+								$sql = 'select * from user where U_id="'.$_SESSION['username'].'"';
 								$result = mysqli_query($connect,$sql);
 								while($row = mysqli_fetch_assoc($result)){
-									echo '<p class="col-sm-offset-1"><label>Username.</label><input name="username" type="text" value="';
+									echo '<p class="col-sm-offset-1"><label>Username.</label><input name="email" type="text" value="';
+									echo $row['U_email'];
+									echo'" id="ContentPlaceHolder1_txtUsername" class="address_input col-sm-offset-1" disabled></p>
+										<p class="col-sm-offset-1"><label>Username.</label><input name="username" type="text" value="';
 									echo $row['U_username'];
 									echo'" id="ContentPlaceHolder1_txtUsername" class="address_input col-sm-offset-1"></p>
 	                        			<p class="col-sm-offset-1"><label>Company name.</label><input name="company" type="text" value="';

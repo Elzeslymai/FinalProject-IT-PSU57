@@ -159,7 +159,7 @@
 			                              	<article style="position: relative; width: 100%; opacity: 1;"> 
 											   	<div class="banner-wrap">
 												   	<div class="slider-left">
-														<img src="images/banner1.jpg" alt=""/> 
+														<img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/> 
 													</div>
 													 <div class="slider-right">
 													    <h2>';
@@ -279,7 +279,7 @@
 				  		<div class="content-bottom">
 							<?php
 							  	$connect = mysqli_connect("localhost","root","","hotelsupport");
-							  	$sql = 'select * from product limit 9';
+							  	$sql = 'select * from product order by RAND() limit 9';
 							  	$result = mysqli_query($connect,$sql);
 			                        $i=3;
 			                        $j=1;
@@ -304,7 +304,7 @@
 					                                       	echo'
 					                                   	</p>
 						                               	<div class="grid_img">
-															<div class="css3"><img src="images/banner2.jpg" alt=""/></div>
+															<div class="css3"><img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/></div>
 															<div class="mask1">
 											                    <div class="info">Quick View</div>
 													        </div>
@@ -343,13 +343,6 @@
 
 			                            mysqli_close($connect);
 			                    ?>
-
-
-
-
-
-
-
 
 				  <div class="clear"></div>
 			    </div>

@@ -3,7 +3,7 @@
  	$_SESSION['username'];
 	require('Menu-side-Supply.php');
 	$connect = mysqli_connect("localhost","root","","hotelsupport");
-	$sql = 'update user set U_username="'.$_POST['username'].'", U_company_name="'.$_POST['company'].'", U_address="'.$_POST['address'].'", U_tell="'.$_POST['tell'].'" where U_username="'.$_SESSION['username'].'"';
+	$sql = 'update user set U_username="'.$_POST['username'].'", U_company_name="'.$_POST['company'].'", U_address="'.$_POST['address'].'", U_tell="'.$_POST['tell'].'" where U_id="'.$_SESSION['username'].'"';
 	$result = mysqli_query($connect,$sql);
 	if(!$result){
 		echo" <script language='javascript'>
@@ -24,8 +24,7 @@
 
 		";
 	}
-	$_SESSION['username'] = $_POST['username'];
-	echo $_SESSION['username'];
+
 	mysqli_close($connect);
 ?>
 

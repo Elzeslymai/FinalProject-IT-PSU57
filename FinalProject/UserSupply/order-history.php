@@ -96,7 +96,7 @@
                                     <div class="col-sm-3">
                                         <div class="row">
                                                 
-                                                STATUS : 
+                                                 
                                                     <button type="button" class="btn btn-danger" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
                                                     &nbsp;&nbsp;
                                                     
@@ -108,7 +108,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="">
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -126,7 +126,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="row">
-                                                    STATUS : 
+                                                    
                                                         <button type="button" class="btn btn-success" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
                                                         &nbsp;&nbsp;
                                                         

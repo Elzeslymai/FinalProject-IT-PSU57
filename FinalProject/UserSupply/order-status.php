@@ -72,39 +72,116 @@
                             $row2 = mysqli_fetch_assoc($result2);
 
                             if($row['status'] != "Cancle" && $row['status'] != "Wait for Accept" && $row['status'] != "Complete"){
-                                echo '
-                                    <div class="col-sm-3">
-                                        <b>
-                                            <u>
-                                                <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
-                                                '.$row['invoiceNo'].'
-                                                </a>
-                                            </u>
-                                        </b>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <b>
-                                        '.$row2['U_company_name'].'
-                                        </b>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <b>
-                                            '.$row['date'].'       
-                                        </b>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                                <form id="update'.$row['order_id'].'" method="post" action="update-status.php">
-                                                STATUS : 
+                                if($row['status'] == "Accept"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="row">
+                                                    <form id="update'.$row['order_id'].'" method="post" action="update-status.php">
+                                                
+                                                    <button type="button" class="btn btn-success" style="width: 135px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                    &nbsp;&nbsp;
+                                                    <input type="hidden" name="updatestatusorder" value="'.$row['order_id'].'">
+                                                    <button type="submit" form="update'.$row['order_id'].'" class="btn btn-info" style="width: 140px;">UPDATE STATUS</button>
+                                                </form>
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                                }
+                                if($row['status'] == "Order Preparation"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="row">
+                                                    <form id="update'.$row['order_id'].'" method="post" action="update-status.php">
+                                                
                                                     <button type="button" class="btn btn-warning" style="width: 135px; margin-right: 0px" disabled>'.$row['status'].'</button>
                                                     &nbsp;&nbsp;
                                                     <input type="hidden" name="updatestatusorder" value="'.$row['order_id'].'">
                                                     <button type="submit" form="update'.$row['order_id'].'" class="btn btn-info" style="width: 140px;">UPDATE STATUS</button>
                                                 </form>
-                                        </div>
-                                    </div>
-                                    <div>&nbsp;</div>';
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
                                 }
+                                if($row['status'] == "Shipment"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="row">
+                                                    <form id="update'.$row['order_id'].'" method="post" action="update-status.php">
+                                                
+                                                    <button type="button" class="btn btn-info" style="width: 135px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                    &nbsp;&nbsp;
+                                                    <input type="hidden" name="updatestatusorder" value="'.$row['order_id'].'">
+                                                    <button type="submit" form="update'.$row['order_id'].'" class="btn btn-info" style="width: 140px;">UPDATE STATUS</button>
+                                                </form>
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                            <div>&nbsp;</div>
+                                        ';
+                                }
+                                
+                            }
 
                         }
 

@@ -16,6 +16,7 @@
 <head>
 <title>Hotel Support</title>
 <link rel="shortcut icon" href="images/icon.png" />
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>
   	<?php
@@ -130,7 +131,11 @@
                             		$i++;
                             	}
                                 echo '
-                                	<div class="col_1_of_single1 span_1_of_single1"><a href="quickProduct.php">
+                                	<form action="quickProduct.php" method="post" name="P'.$row['P_id'].'">
+                                        <input name="P'.$row['P_id'].'" type="hidden"   value="'.$row['P_id'].'">
+                                    </form>
+                                	<div class="col_1_of_single1 span_1_of_single1">
+                                	<a href="javascript: P'.$row['P_id'].'()" >
 								     <div class="view1 view-fifth1">
 								  	  <div class="top_box">
 									  	<h3 class="m_1">';
@@ -142,7 +147,7 @@
                                             	echo'
                                         	</p>
 	                                     	<div class="grid_img">
-											    <div class="css3"><img src="images/banner2.jpg" alt=""/></div>
+											    <div class="css3"><img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/ style="height: 150px; width: 200px;"></div>
 										          <div class="mask1">
 						                       		<div class="info">Quick View</div>
 								                  </div>
@@ -164,7 +169,12 @@
                                             <input type="submit" value="Add To Bag" class="form-control input-md btn-warning">
                                         </form>
 									  </div>
-								     
+								     	<script> 
+                                            function P'.$row['P_id'].'() {   
+                                            	console.log("test");
+                                                document.P'.$row['P_id'].'.submit();
+                                            }  
+                                      </script>
 								    </div>
 								    	';
 								if($j==3){
@@ -175,6 +185,7 @@
 								}else{
 									$j++;
 								}
+								
                             }
                             
 

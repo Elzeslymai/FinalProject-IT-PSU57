@@ -437,7 +437,6 @@
 
 				<li ><a href="order-status.php">Order Status<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-check"></span></a></li>
 
-				<li ><a href="invoice-bill.php">Invoice Bill<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-usd"></span></a></li>
 
                <li class=""><a href="order-history.php">Order History<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-time"></span></a></li>
 

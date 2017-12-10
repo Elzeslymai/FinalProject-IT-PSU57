@@ -34,21 +34,23 @@
                                     $connect = mysqli_connect("localhost","root","","hotelsupport");
                                     $sql = 'select * from cart where U_id="'.$_SESSION['username'].'"';
                                     $result = mysqli_query($connect,$sql);
+                                    $totalprice1 =0;
                                     $totalprice =0;
                                     $eachprice = 0;
                                     while($row = mysqli_fetch_assoc($result)){
                                         $eachprice = $row['P_price'] * $row['C_qty'];
-                                        $totalprice = $totalprice + $eachprice;
+                                        $totalprice1 = $totalprice1 + $eachprice;
                                         
                                     }
 
                                     mysqli_close($connect);
+                                    $totalprice =$totalprice1;
                                     $tax = 0;
-                                    $tax += ($totalprice*7)/100;
-                                    $totalprice += $tax;
+                                    $tax += ($totalprice1*7)/100;
+                                    $totalprice1 += $tax;
                                     echo'
                                             <h3>Price Details</h3>
-                                            <span>Total</span>
+                                            <span>Price</span>
                                             <span class="total1">'.$totalprice.'</span>
                                             <span>Tax rate</span>
                                             <span class="total1">7%</span>
@@ -59,7 +61,7 @@
                                         <hr class="featurette-divider">
                                         <ul class="total_price">
                                            <li class="last_price"> <h4>TOTAL</h4></li>  
-                                           <li class="last_price"><span>'.$totalprice.'฿ </span></li>
+                                           <li class="last_price"><span>'.$totalprice1.'฿ </span></li>
                                            <div class="clearfix"> </div>
                                         </ul> 
                                     ';
@@ -83,9 +85,10 @@
                                 $id = 0;
                                 $id1 = 1;
                                 while($row1 = mysqli_fetch_assoc($result1)){
-                                    $sql2 ='select Pick_up_date from cart where Supply_name="'.$row1['Supply_name'].'" and U_id="'.$_SESSION['username'].'"';
+                                    $sql2 ='select Pick_up_date, P_id from cart where Supply_name="'.$row1['Supply_name'].'" and U_id="'.$_SESSION['username'].'"';
                                     $result2 = mysqli_query($connect,$sql2);
                                     $row2 = mysqli_fetch_assoc($result2);
+
                                     echo'
                                     <div class="panel" style="border-color: orange;" id="Po1">
                                         <div class="panel-heading">
@@ -95,7 +98,7 @@
                                                 </div>
                                                 <div class="col-sm-4">            
                                                     <p><b style="color: #d93c21;">'.$row1['Supply_name'].'</b></p>
-                                                    <p>เวลาจัดส่งสินค้า 9.00-17.00 / ขั้นต่ำ 2000 บาท</p>
+                                                    
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <b style="color: #d93c21;">กำหนดวันรับสินค้า</b>
@@ -130,7 +133,10 @@
                                             }else{
                                                 $i++;
                                             }
-                                                
+                                            
+                                            $sql3 = 'select P_time_to_shipment from product where P_id="'.$row['P_id'].'"';
+                                            $result3 = mysqli_query($connect,$sql3);
+                                            $row3 = mysqli_fetch_assoc($result3);
                                                 echo '
                                                     <div class="cart-header" id="order1">
                                                         <div class="close" id="close1">
@@ -176,7 +182,7 @@
                                                         
                                                                 </ul>
                                                                 <div class="delivery">               
-                                                                    <span>**สั่งล่วงหน้า 1 วัน**</span>
+                                                                    <span>**สั่งล่วงหน้า '.$row3['P_time_to_shipment'].' วัน**</span>
                                                                     <div class="clearfix"></div>
                                                                 </div>  
                                                             </div>

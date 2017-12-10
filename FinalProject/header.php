@@ -89,18 +89,29 @@
 					  	<?php 
 							if($_SESSION['status'] == 'Admin'){
 								echo'<li><a href="UserAdmin/home.php">Dashboard</a></li>';
-							}else if($_SESSION['status'] == 'Hotel'){
+							}
+							if($_SESSION['status'] == 'Hotel'){
 								echo'<li><a href="UserHotel/home.php">Dashboard</a></li>';
-							
+							}
+							if($_SESSION['status'] == 'Supply'){
+								echo'<li><a href="UserSupply/home.php">Dashboard</a></li>';
 							}
 						?>
-		                <li><a href="UserHotel/edit-password.php">Change Password</a></li>
+						<?php 
+							if($_SESSION['status'] == 'Admin'){
+								echo'<li><a href="UserAdmin/edit-password.php">Change Password</a></li>';
+							}
+							if($_SESSION['status'] == 'Hotel'){
+								echo'<li><a href="UserHotel/edit-password.php">Change Password</a></li>';
+							}
+							if($_SESSION['status'] == 'Supply'){
+								echo'<li><a href="UserSupply/edit-password.php">Change Password</a></li>';
+							}
+						?>
 		                <li><a href="login.php">Logout</a></li>
 		                <li class="divider"></li>
 		                <li><br></li>
-		                <li><a href="UserHotel/home.php">Hotel</a></li>
-		                <li><a href="UserSupply/home.php">Supply</a></li>
-		                <li><a href="UserAdmin/home.php">Admin</a></li>
+
 		              </ul>                
 		            </li>
 			 <li><a href="shop.php">Shopping</a></li> 

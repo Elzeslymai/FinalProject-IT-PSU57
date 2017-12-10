@@ -26,8 +26,6 @@
 	}
 	mysqli_close($connect);
 
-	echo $supplyname;
-	echo $date;
 
 	$connect = mysqli_connect("localhost","root","","hotelsupport");
     $sql1 = 'update cart set Pick_up_date="'.$date.'" where Supply_name="'.$supplyname.'" and U_id="'.$_SESSION['username'].'"';

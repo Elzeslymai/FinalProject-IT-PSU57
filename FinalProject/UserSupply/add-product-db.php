@@ -3,9 +3,16 @@
 session_start();
 echo $_SESSION['username'];
 	require('Menu-side-Supply.php');
- 	
+
+ 	$target_dir = "uploads/".$_SESSION['username'];
+	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file);
+
+	$filename = $_SESSION['username'].basename($_FILES["fileToUpload"]["name"]);
+
 	$connect = mysqli_connect("localhost","root","","hotelsupport");
-	$sql = 'insert into product values (null,"'.$_SESSION['username'].'","'.$_POST['U_company_name'].'","'.$_POST['ProductName'].'","'.$_POST['Catagories'].'","'.$_POST['Grade'].'","'.$_POST['Price'].'","'.$_POST['Detail'].'","'.$_POST['shipment'].'","'.$_POST['Fee'].'","'.date("y-m-d").'")';
+	$sql = 'insert into product values (null,"'.$_SESSION['username'].'","'.$_POST['U_company_name'].'","'.$_POST['ProductName'].'","'.$_POST['Catagories'].'","'.$_POST['Grade'].'","'.$_POST['Price'].'","'.$_POST['Detail'].'","'.$_POST['shipment'].'","'.$_POST['Fee'].'","'.date("y-m-d").'","'.$filename.'")';
 	$result = mysqli_query($connect,$sql);
 	if(!$result){
 		echo" <script language='javascript'>

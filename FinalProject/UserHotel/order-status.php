@@ -63,7 +63,8 @@
                         $result = mysqli_query($connect,$sql);
                         while($row = mysqli_fetch_assoc($result)){
                             if($row['status'] != "Cancle" && $row['status'] != "Complete"){
-                                echo '
+                                if($row['status'] == "Wait for Accept"){
+                                    echo '
                                     <div class="col-sm-3">
                                         <b>
                                             <u>
@@ -78,28 +79,32 @@
                                         '.$row['Supply_name'].'
                                         </b>
                                     </div>
-                                    <div class="col-sm-2">
+                                    <div class="col-sm-3">
                                         <b>
                                             '.$row['date'].'       
                                         </b>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <div class="row">
                                                 <form id="delete'.$row['order_id'].'" method="post" action="delete-order-db.php">
-                                                STATUS : 
-                                                    <button type="button" class="btn btn-warning" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                 
+                                                    <button type="button" class="btn" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
                                                     &nbsp;&nbsp;
                                                     <input type="hidden" name="deleteorder" value="'.$row['order_id'].'">
                                                     <button type="submit" form="delete'.$row['order_id'].'" class="btn btn-danger" style="width: 40px;"><span class="glyphicon glyphicon-remove"></span></button>
                                                 </form>
                                         </div>
                                     </div>';
-                                }else if($row['status'] == "Accept"){
+                                    echo '                     
+                                <div>&nbsp;</div>
+                            ';
+                                }
+                                if($row['status'] == "Accept"){
                                     echo'
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="">
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -110,24 +115,91 @@
                                             '.$row['Supply_name'].'
                                             </b>
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <b>
                                                 '.$row['date'].'       
                                             </b>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-3">
                                             <div class="row">
-                                                    STATUS : 
+                                                    
                                                         <button type="button" class="btn btn-success" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
                                                         &nbsp;&nbsp;
                                                         
                                             </div>
                                         </div>';
-                                }
-
-                                echo '                     
+                                        echo '                     
                                 <div>&nbsp;</div>
                             ';
+                                }
+                                if($row['status'] == "Order Preparation"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-warning" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                <div>&nbsp;</div>
+                            ';
+                                }
+                                if($row['status'] == "Shipment"){
+                                    echo'
+                                        <div class="col-sm-3">
+                                            <b>
+                                                <u>
+                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    '.$row['invoiceNo'].'
+                                                    </a>
+                                                </u>
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                            '.$row['Supply_name'].'
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <b>
+                                                '.$row['date'].'       
+                                            </b>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="row">
+                                                    
+                                                        <button type="button" class="btn btn-info" style="width: 120px; margin-right: 0px" disabled>'.$row['status'].'</button>
+                                                        &nbsp;&nbsp;
+                                                        
+                                            </div>
+                                        </div>';
+                                        echo '                     
+                                <div>&nbsp;</div>
+                            ';
+                                }
+                            }
+                                
                         }
 
                         mysqli_close($connect);
