@@ -108,7 +108,7 @@
 								echo'<li><a href="UserSupply/edit-password.php">Change Password</a></li>';
 							}
 						?>
-		                <li><a href="login.php">Logout</a></li>
+		                <li><a href="index.php">Logout</a></li>
 		                <li class="divider"></li>
 		                <li><br></li>
 

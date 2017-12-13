@@ -405,7 +405,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/FinalProject/index.php">
+            <a class="navbar-brand" href="/FinalProject/home.php">
                 <img src="/FinalProject/images/logo.png" alt="LOGO" style="height: 50px; width: 200px;">
             </a>
         </div>

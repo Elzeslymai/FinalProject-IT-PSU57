@@ -1,356 +1,211 @@
-<?php 
- 		
- 		session_start();
- 			if(empty($_SESSION['username'])){
- 				echo "<script>alert('Please Login !! ');document.location='/FinalProject/login.php'</script>";
- 			}else{
-				if($_SESSION['status'] == 'Admin' || $_SESSION['status'] == 'Hotel'){
-					
-				}else{
-					echo "<script>alert('You not have permission');document.location='/FinalProject/login.php'</script>";
-				}
-			}
-?>
-<!DOCTYPE>
-<html >
+<!DOCTYPE html>
+<html>
 <head>
-<title>Hotel Support</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="css/style1.css">
-<link rel="shortcut icon" href="images/icon.png" />
-<link rel="stylesheet" href="css/bootstrap.css" >
+	<title>Hotel Support</title>
+	<link rel="shortcut icon" href="images/icon.png" />
+	<link rel="stylesheet" href="css/bootstrap.css" >
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript">
-        $(document).ready(function() {
-            $(".dropdown img.flag").addClass("flagvisibility");
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<style type="text/css">
+		#login {
+		    padding-top: 50px
+		}
+		#login .form-wrap {
+		    width: 30%;
+		    margin: 0 auto;
+		}
+		#login h1 {
+		    color: #1fa67b;
+		    font-size: 18px;
+		    text-align: center;
+		    font-weight: bold;
+		    padding-bottom: 20px;
+		}
+		#login .form-group {
+		    margin-bottom: 25px;
+		}
+		#login .checkbox {
+		    margin-bottom: 20px;
+		    position: relative;
+		    -webkit-user-select: none;
+		    -moz-user-select: none;
+		    -ms-user-select: none;
+		    -o-user-select: none;
+		    user-select: none;
+		}
+		#login .checkbox.show:before {
+		    content: '\e013';
+		    color: #1fa67b;
+		    font-size: 17px;
+		    margin: 1px 0 0 3px;
+		    position: absolute;
+		    pointer-events: none;
+		    font-family: 'Glyphicons Halflings';
+		}
+		#login .checkbox .character-checkbox {
+		    width: 25px;
+		    height: 25px;
+		    cursor: pointer;
+		    border-radius: 3px;
+		    border: 1px solid #ccc;
+		    vertical-align: middle;
+		    display: inline-block;
+		}
+		#login .checkbox .label {
+		    color: #6d6d6d;
+		    font-size: 13px;
+		    font-weight: normal;
+		}
+		#login .btn.btn-custom {
+		    font-size: 14px;
+			margin-bottom: 20px;
+		}
+		#login .forget {
+		    font-size: 13px;
+			text-align: center;
+			display: block;
+		}
 
-            $(".dropdown dt a").click(function() {
-                $(".dropdown dd ul").toggle();
-            });
-                        
-            $(".dropdown dd ul li a").click(function() {
-                var text = $(this).html();
-                $(".dropdown dt a span").html(text);
-                $(".dropdown dd ul").hide();
-                $("#result").html("Selected value is: " + getSelectedValue("sample"));
-            });
-                        
-            function getSelectedValue(id) {
-                return $("#" + id).find("dt a span.value").html();
-            }
+		/*    --------------------------------------------------
+			:: Inputs & Buttons
+			-------------------------------------------------- */
+		.form-control {
+		    color: #212121;
+		}
+		.btn-custom {
+		    color: #fff;
+			background-color: #1fa67b;
+		}
+		.btn-custom:hover,
+		.btn-custom:focus {
+		    color: #fff;
+		}
 
-            $(document).bind('click', function(e) {
-                var $clicked = $(e.target);
-                if (! $clicked.parents().hasClass("dropdown"))
-                    $(".dropdown dd ul").hide();
-            });
+		/*    --------------------------------------------------
+		    :: Footer
+			-------------------------------------------------- */
+		#footer {
+		    color: #6d6d6d;
+		    font-size: 12px;
+		    text-align: center;
+		}
+		#footer p {
+		    margin-bottom: 0;
+		}
+		#footer a {
+		    color: inherit;
+		}
+	</style>
 
-
-            $("#flagSwitcher").click(function() {
-                $(".dropdown img.flag").toggleClass("flagvisibility");
-            });
-        });
-     </script> 
-<!-- start menu -->     
-<link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!-- end menu -->
-<!-- top scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
-   <script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-			});
-		});
-
-		$(document).ready(function(){
-		    $(".dropdown").hover(            
-		        function() {
-		            $('.dropdown-menu', this).not('.in .dropdown-menu').stop().slideDown("fast");
-		            $(this).toggleClass('open');        
-		        },
-		        function() {
-		            $('.dropdown-menu', this).not('.in .dropdown-menu').stop().slideUp("fast");
-		            $(this).toggleClass('open');       
-		        }
-		    );
-		});
+	<script type="text/javascript">
+		function showPassword() {
+    
+		    var key_attr = $('#password').attr('type');
+		    
+		    if(key_attr != 'text') {
+		        
+		        $('.checkbox').addClass('show');
+		        $('#password').attr('type', 'text');
+		        
+		    } else {
+		        
+		        $('.checkbox').removeClass('show');
+		        $('#password').attr('type', 'password');
+		        
+		    }
+		    
+		}
 	</script>
 </head>
-<body >
-  	 <div class="header-top">
-	 <div class="wrap"> 
-		<div class="logo">
-			<a href="index.php"><img src="images/logo.png"></a>
-	    </div>
-	    <div class="cssmenu">
+<body background="\FinalProject\images\login3.jpg" >
+	<br><br><br><br><br>
+	<section id="login">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+        	    <br>
+                <h1>Log in to website for get more feature</h1>
+                    <form action="Checkuser.php" method="post" id="login-form" autocomplete="off">
+                        <div class="form-group">
+                            <p><span class="glyphicon glyphicon-user"></span> Username</p>
+                            <input type="username" name="username" class="form-control" placeholder="Username or Email">
+                        </div>
+                        <div class="form-group">
+                            <p><span class="glyphicon glyphicon-lock"></span> Password</p>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <span class="character-checkbox" onclick="showPassword()"></span>
+                            <span class="label">Show password</span>
+                        </div>
+                        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                    </form>
+                    <a href="javascript:;" class="forget" data-toggle="modal" data-target="#forgetmodal">Forgot your password?</a>
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
 
-		   <ul>
-		        	<li class="dropdown">
-					  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>				
-					  <ul class="dropdown-menu" >
-					  	<li><a href="UserHotel/home.php">Dashboard</a></li>
-		                <li><a href="UserHotel/edit-password.php">Change Password</a></li>
-		                <li><a href="login.php">Logout</a></li>
-		                <li class="divider"></li>
-		                <li><br></li>
-		                <li><a href="UserHotel/home.php">Hotel</a></li>
-		                <li><a href="UserSupply/home.php">Supply</a></li>
-		                <li><a href="UserAdmin/home.php">Admin</a></li>
-		              </ul>                
-		            </li>
-			 <li><a href="shop.php">Shopping</a></li> 
-			 <li><a href="checkout.php">CheckOut</a></li> 
-			 <li>
-				<a href="checkout.php">
-				<?php 
-						$connect = mysqli_connect("localhost","root","","hotelsupport");
-						$sql = 'select * from cart where U_id="'.$_SESSION['username'].'"';
-						$result = mysqli_query($connect,$sql);
-						$totalprice =0;
-						$count = 0;
-						while($row = mysqli_fetch_assoc($result)){
-							$count++;
-							$totalprice = $totalprice + $row['P_price'];
-							
-						}
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true" id="forgetmodal">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">×</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Recovery password</h4>
+			</div>
+			<div class="modal-body">
+				<p>your username</p>
+				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+				<p>Type your email account</p>
+				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-custom" data-toggle="modal" data-dismiss="modal" data-target="#forgetmodal1">Recovery</button>
+			</div>
+		</div> <!-- /.modal-content -->
+	</div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
 
-						mysqli_close($connect);
-
-					
-						echo '<span class="simpleCart_total">฿ '.$totalprice.'</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">'.$count.'</span> items)
-							<i class="glyphicon glyphicon-shopping-cart"></i></a>';
-
-					?>
-					
-
-					
-			 </li>
-			 <li><a href="login.php">Logout</a></li>
-		   </ul>
-		</div></div>
-		<!--<ul class="icon2 sub-icon2 profile_img">
-			<li><a class="active-icon c2" href="#"> </a>
-				<ul class="sub-icon2 list">
-					<li><h3>Products</h3><a href=""></a></li>
-					<li><p>Lorem ipsum dolor sit amet, consectetuer  <a href="">adipiscing elit, sed diam</a></p></li>
-				</ul>
-			</li>
-		</ul>-->
-		<div class="clear"></div>
- 	</div>
-   </div>
-       <div class="index-banner">
-       	  <div class="wmuSlider example1" style="height: 560px;">
-			  <div class="wmuSliderWrapper">
-				  		<?php
-							  	$connect = mysqli_connect("localhost","root","","hotelsupport");
-							  	$sql = 'select * from product order by RAND() LIMIT 4;';
-							  	$result = mysqli_query($connect,$sql);
-			                        while($row = mysqli_fetch_assoc($result)){
-			                            echo '
-			                              	<article style="position: relative; width: 100%; opacity: 1;"> 
-											   	<div class="banner-wrap">
-												   	<div class="slider-left">
-														<img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/> 
-													</div>
-													 <div class="slider-right">
-													    <h2>';
-					                                        echo $row['P_name'];
-					                                        echo' 
-					                                    </h2>
-					                                    <h3>Price : <font color="red">';
-					                                       	echo $row['P_price'];
-					                                       	echo'
-					                                   	฿</font></h3>
-					                                    <h3>Grad : ';
-					                                       	echo $row['P_grade'];
-					                                       	echo'
-					                                   	</h3>
-						    							<p> by: ';
-						                                    echo $row['U_company_name'];
-						                                    echo '
-						                                </P>
-					                                    <div class="btn"><a href="shop.php">Shop Now</a></div>
-													</div>
-												 	<div class="clear"></div>
-											 	</div>
-											</article>
-										';
-			                            }
-			                            
-
-			                            mysqli_close($connect);
-			                    ?>			
-				</div>
-
-                <a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a>
-                <ul class="wmuSliderPagination">
-                	<li><a href="#" class="">0</a></li>
-                	<li><a href="#" class="">1</a></li>
-                	<li><a href="#" class="wmuActive">2</a></li>
-                	<li><a href="#">3</a></li>
-                	<li><a href="#">4</a></li>
-                  </ul>
-                 <a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a><ul class="wmuSliderPagination"><li><a href="#" class="wmuActive">0</a></li><li><a href="#" class="">1</a></li><li><a href="#" class="">2</a></li><li><a href="#" class="">3</a></li><li><a href="#" class="">4</a></li></ul></div>
-            	 <script src="js/jquery.wmuSlider.js"></script> 
-				 <script type="text/javascript" src="js/modernizr.custom.min.js"></script> 
-						<script>
-       						 $('.example1').wmuSlider();         
-   						</script> 	           	      
-             </div>
-             <div class="header-bottom">
-			    <form action="shop.php" method="post">
-			   	<div class="wrap" align="middle" >
-			   		<!-- start header menu -->
-
-					<ul class="">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="col-sm-2 col-sm-offset-2">
-									<select class="form-control" name="supplylist" style="width: 200px;">
-										<option value="*">All Supplier</option>
-										<?php 
-											$connect = mysqli_connect("localhost","root","","hotelsupport");
-											$sql = 'select U_company_name from user where u_type="Supply"';
-											$result = mysqli_query($connect,$sql);
-											while($row = mysqli_fetch_assoc($result)){
-												echo '<option value="'.$row['U_company_name'].'">'.$row['U_company_name'].'</option>';
-											}
-											mysqli_close($connect);
-										?>
-									</select>
-								</div>
-								<div class="col-sm-2">
-									<select class="form-control" name="productlist" style="width: 200px; color: rgba(0,0,0,.87);" >
-										<option value="*">All Product</option>
-										<option value="vegetable">ผัก</option>
-										<option value="fruit">ผลไม้</option>
-										<option value="meat">เนื้อสัตว์</option>
-										<option value="canned food">อาหารกระป๋อง</option>
-										<option value="Spices and seasonings">เครื่องเทศและเครื่องปรุงรส</option>
-										<option value="dried food">อาหารแห้ง</option>
-										<option value="Flour and sugar">แป้งและน้ำตาล</option>
-
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true" id="forgetmodal1">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">×</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Recovery password</h4>
+			</div>
+			<div class="modal-body">
+				<p><i class="glyphicon glyphicon-ok-sign"></i>link to reset password send to your email</p>
 				
-									</select>
-								</div>
-								<div class="col-sm-4">
-									<input class="form-control" name="tsearch" placeholder="Find Someting You Want">
-								</div>
-							
-								<div class="col-sm-1">
-									<input class="btn btn-outline-secondary" type="submit" value="Search">
-								</div>
-								<div class="col-sm-9" >
-									<div class="col-sm-5 col-sm-offset-2">
-										<label>Grade : </label>
-											<input type="radio" value="A" name="grade"> A
-											<input type="radio" value="B" name="grade"> B
-											<input type="radio" value="C" name="grade"> C
-											<input type="radio" value="D" name="grade"> D
-											<input type="radio" value="Other" name="grade"> Other
-											<input type="radio" value="*" name="grade" checked> All
-									</div>
-									
-								</div>  
-							</div>	
-						</div>	
-					</ul> 
-					<div class="clear"></div>
-			    </div>
-			</form>
-       </div>
-       
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<a href="https://www.hotmail.com"><button type="button" class="btn btn-custom">Go to Email</button></a>
+			</div>
+		</div> <!-- /.modal-content -->
+	</div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
 
-
-
-             <div class="main" style="margin-left: 70px;">
-                <div class="wrap">
-             	  	<div class="content-top">
-
-				  		<div class="content-bottom">
-							<?php
-							  	$connect = mysqli_connect("localhost","root","","hotelsupport");
-							  	$sql = 'select * from product order by RAND() limit 9';
-							  	$result = mysqli_query($connect,$sql);
-			                        $i=3;
-			                        $j=1;
-			                        while($row = mysqli_fetch_assoc($result)){
-
-			                           	if($i==3){
-			                            	echo'<div class="box1">';
-			                            	$i=1;
-			                            }else{
-			                            	$i++;
-			                            }
-			                            echo '
-			                              	<div class="col_1_of_single1 span_1_of_single1"><a href="quickProduct.php">
-											    <div class="view1 view-fifth1">
-												 	<div class="top_box">
-													  	<h3 class="m_1">';
-					                                        echo $row['P_name'];
-					                                        echo' 
-					                                    </h3>
-					                                    <p class="m_2">Grad : ';
-					                                       	echo $row['P_grade'];
-					                                       	echo'
-					                                   	</p>
-						                               	<div class="grid_img">
-															<div class="css3"><img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/></div>
-															<div class="mask1">
-											                    <div class="info">Quick View</div>
-													        </div>
-											            </div>
-										                <div class="price">฿';
-						                                    echo $row['P_price'];
-						                                    echo '
-					                                    </div>
-					                       				<p class="m_2"><font color="green">By : ';
-					                                        echo $row['U_company_name'];   
-					                                        echo'
-					                                        </font>
-					                                    </p>
-													</div></a>
-									
-									 
-										<form name="delete'.$row['P_id'].'" method="post" action="add-to-bag.php">
-                                            <input type="hidden" name="productid" value="'.$row['P_id'].'">
-                                                
-                                            <input type="submit" value="Add To Bag" class="form-control input-md btn-warning">
-                                        </form>
-									  </div>
-								     
-								    </div>
-											    	';
-											if($j==3){
-												echo'
-												<div class="clear"></div>
-						  					</div>';
-						  					$j=1;
-											}else{
-												$j++;
-											}
-			                            }
-			                            
-
-			                            mysqli_close($connect);
-			                    ?>
-
-				  <div class="clear"></div>
-			    </div>
-			  </div>
-			 </div>
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Hotel Support © - 2017</p>
+                <p>Powered by <strong><a href="http://leaderphotograph.azurewebsites.net/" target="_blank">Bigbody</a></strong></p>
+            </div>
         </div>
-        <?php 
-        	require('footer.php');
-        ?>
+    </div>
+</footer>
 </body>
 </html>

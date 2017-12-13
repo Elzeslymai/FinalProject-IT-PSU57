@@ -20,7 +20,7 @@
 
 
 	if(!$result){
-		echo "<script>alert('Your username or password is wrong !!!');document.location='login.php'</script>";
+		echo "<script>alert('Your username or password is wrong !!!');document.location='index.php'</script>";
 	}else{
 		$query2 = $connect->query($sql2);
 		$result2 = $query2->fetch_object();
@@ -28,19 +28,20 @@
 		switch ($status) {
 			case "Admin":
 				$_SESSION['status'] = $status;
-				header("Location:/FinalProject/UserAdmin/home.php");
+				echo "<script>document.location='/FinalProject/UserAdmin/home.php'</script>";
 				break;
 			case "Supply":
 				$_SESSION['status'] = $status;
-				header("Location:/FinalProject/UserSupply/home.php");
+				echo "<script>document.location='/FinalProject/UserSupply/home.php'</script>";
 				break;
 			case "Hotel":
 				$_SESSION['status'] = $status;
-				header("Location:/FinalProject/UserHotel/home.php");
+				echo "<script>document.location='/FinalProject/UserHotel/home.php'</script>";
+                //echo $_SESSION['username'];
 				break;
 			
 			default:
-				header("Location:login.php");
+				header("Location:index.php");
 				break;
 		}
 		

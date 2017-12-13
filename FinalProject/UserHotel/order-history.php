@@ -2,12 +2,12 @@
         
         session_start();
             if(empty($_SESSION['username'])){
-                echo "<script>alert('Please Login !! ');document.location='/FinalProject/login.php'</script>";
+                echo "<script>alert('Please Login !! ');document.location='/FinalProject/index.php'</script>";
             }else{
                 if($_SESSION['status'] == 'Hotel'){
                     
                 }else{
-                    echo "<script>alert('You not have permission');document.location='/FinalProject/login.php'</script>";
+                    echo "<script>alert('You not have permission');document.location='/FinalProject/index.php'</script>";
                 }
             }
 ?>
