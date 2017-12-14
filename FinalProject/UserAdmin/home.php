@@ -1359,7 +1359,18 @@
 			        <div class="pull-middle">User List</div>
 			    </div>
 			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user" style="margin-right: 40px;"></span>2</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user" style="margin-right: 40px;"></span>
+			        <?php
+			        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+                        $sql = 'select count(U_id) from user';
+                        $result = mysqli_query($connect,$sql);
+                        while($row = mysqli_fetch_assoc($result)){
+                        	echo $row['count(U_id)'];
+
+                        }
+                        mysqli_close($connect);
+			        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1373,7 +1384,18 @@
 			        <div class="pull-middle">Order List</div>
 			    </div>
 			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-list-alt" style="margin-right: 40px;"></span>2</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-list-alt" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+	                        $sql = 'select count(order_id) from order1';
+	                        $result = mysqli_query($connect,$sql);
+	                        while($row = mysqli_fetch_assoc($result)){
+	                        	echo $row['count(order_id)'];
+
+	                        }
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1401,7 +1423,24 @@
 	    	</div>
   		</div>-->
 	</div>
-               
+	<br><br><br><br>
+               <div class="col-md-2 col-md-offset-4">
+		        	<a class="info-tiles tiles-blue has-footer" href="/FinalProject/UserManual/UserManual.pdf" target ="_blank">
+					    <img src="/FinalProject/images/Artboard1.png">
+					</a>
+		    	</div>
+
+		    	<div class="col-md-2 ">
+		        	<a class="info-tiles tiles-blue has-footer" href="https://1drv.ms/v/s!AvGnfIIoN9lSiRYZ2mTmVoiJ_DIO" target ="_blank">
+					    <img src="/FinalProject/images/Artboard2.png">
+					</a>
+		    	</div>
+
+		    	<div class="col-md-2 ">
+		        	<a class="info-tiles tiles-blue has-footer" href="https://1drv.ms/v/s!AvGnfIIoN9lSiRW9Qatcp64gkWCW" target ="_blank">
+					    <img src="/FinalProject/images/Artboard3.png">
+					</a>
+		    	</div>
  	
  </body>
 </html>

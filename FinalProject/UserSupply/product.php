@@ -71,10 +71,10 @@
                                 echo '<div class="col-sm-2">
                                         <b>
                                             <u>
-                                                <a href="#">';
+                                                ';
                                                     echo $row['P_id'];
                                                     echo' 
-                                                </a>
+                                                
                                             </u>
                                         </b>
                                       </div>

@@ -67,7 +67,7 @@
                                     ';
                                 ?>
                         <div class="clearfix"></div>
-                        <a class="order" href="add-order-db.php" id="makeInvoice">Make invoice</a>
+                        <a class="order" href="add-order-db.php" id="makeInvoice">Make Order</a>
 
                     </div>
 
@@ -80,7 +80,7 @@
                             <?php 
                                 $count = 0;
                                 $connect = mysqli_connect("localhost","root","","hotelsupport");
-                                $sql1 = 'select DISTINCT Supply_name from cart where U_id="'.$_SESSION['username'].'"';
+                                $sql1 = 'select DISTINCT Supply_name,U_id from cart where U_id="'.$_SESSION['username'].'"';
                                 $result1 = mysqli_query($connect,$sql1);
                                 $id = 0;
                                 $id1 = 1;
@@ -89,12 +89,15 @@
                                     $result2 = mysqli_query($connect,$sql2);
                                     $row2 = mysqli_fetch_assoc($result2);
 
+                                    $sql4 = 'select U_filename from user where U_company_name = "'.$row1['Supply_name'].'"';
+                                    $result4 = mysqli_query($connect,$sql4);
+                                    $row4 = mysqli_fetch_assoc($result4);
                                     echo'
                                     <div class="panel" style="border-color: orange;" id="Po1">
                                         <div class="panel-heading">
                                             <div class="container">
                                                 <div class="col-sm-2">
-                                                    <img src="http://prod.static9.net.au/_/media/TV/T/Travel-Guides/Phuket/Logos/logo.png" style="height: 50px;"> 
+                                                    <img src="/FinalProject/UserAdmin/uploads/'.$row4['U_filename'].'" style="height: 50px;"> 
                                                 </div>
                                                 <div class="col-sm-4">            
                                                     <p><b style="color: #d93c21;">'.$row1['Supply_name'].'</b></p>
@@ -134,7 +137,7 @@
                                                 $i++;
                                             }
                                             
-                                            $sql3 = 'select P_time_to_shipment from product where P_id="'.$row['P_id'].'"';
+                                            $sql3 = 'select P_time_to_shipment,P_filename from product where P_id="'.$row['P_id'].'"';
                                             $result3 = mysqli_query($connect,$sql3);
                                             $row3 = mysqli_fetch_assoc($result3);
                                                 echo '
@@ -150,7 +153,7 @@
 
                                                         <div class="cart-sec simpleCart_shelfItem">
                                                             <div class="cart-item">
-                                                                <img src="images/banner1.jpg" class="img-responsive" alt="" style="margin-top: 30px;">
+                                                                <img src="UserSupply/uploads/'.$row3['P_filename'].'" class="img-responsive" alt="" style="margin-top: 30px;">
                                                             </div>
                                                             <div class="cart-item-info" >
                                                                 <ul class="qty" >

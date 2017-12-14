@@ -78,7 +78,7 @@
   <div class="header-top">
 	 <div class="wrap"> 
 		<div class="logo">
-			<a href="index.php"><img src="images/logo.png"></a>
+			<a href="home.php"><img src="images/logo.png"></a>
 	    </div>
 	    <div class="cssmenu">
 		   <ul>

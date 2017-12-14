@@ -77,7 +77,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <b>
-                                            '.$row['Supply_name'].'
+                                            '.$row2['U_company_name'].'
                                             </b>
                                         </div>
                                         <div class="col-sm-2">
@@ -113,7 +113,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <b>
-                                            '.$row['Supply_name'].'
+                                            '.$row2['U_company_name'].'
                                             </b>
                                         </div>
                                         <div class="col-sm-2">
@@ -149,7 +149,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="col-sm-3">
                                             <b>
-                                            '.$row['Supply_name'].'
+                                            '.$row2['U_company_name'].'
                                             </b>
                                         </div>
                                         <div class="col-sm-2">

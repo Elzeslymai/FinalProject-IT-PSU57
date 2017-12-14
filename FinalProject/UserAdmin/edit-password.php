@@ -38,46 +38,26 @@
  	<br>
  	<br>
  	<br>
- 	<div class="container">
- 		<div class="row">
- 			<div class="col-sm-4 col-sm-offset-4">
- 				<div class="modal-header">
-					<h3 class="modal-title"><span class="glyphicon glyphicon-lock"></span>Recovery password</h3>
-				</div>
-				<div class="modal-body">
-					<p><span class="glyphicon glyphicon-user"></span> Username</p>
-					<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off" placeholder="example">
-					<br><p><span class="glyphicon glyphicon-envelope"></span> Type your email account</p>
-					<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off" placeholder="somebody@example.com">
-				</div>
-				<div class="col-sm-offset-3">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					<button type="button" class="btn btn-custom" data-toggle="modal" data-dismiss="modal" data-target="#forgetmodal1">Recovery</button>
-				</div>
- 			</div>
- 		</div>
- 	</div>
-
- 	<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true" id="forgetmodal1">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					<span aria-hidden="true">×</span>
-					<span class="sr-only">Close</span>
-				</button>
-				<h4 class="modal-title">Recovery password</h4>
-			</div>
-			<div class="modal-body">
-				<p><i class="glyphicon glyphicon-ok-sign"></i>link to reset password send to your email</p>
-				
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<a href="https://www.hotmail.com"><button type="button" class="btn btn-custom">Go to Email</button></a>
-			</div>
-		</div> <!-- /.modal-content -->
-	</div> <!-- /.modal-dialog -->
-</div> <!-- /.modal -->
+ 	<form action="edit-password-db.php" method="post">
+	 	<div class="container">
+	 		<div class="row">
+	 			<div class="col-sm-4 col-sm-offset-4">
+	 				<div class="modal-header">
+						<h3 class="modal-title"><span class="glyphicon glyphicon-lock"></span>Recovery password</h3>
+					</div>
+					<div class="modal-body">
+						<p><span class="glyphicon glyphicon-lock"></span>Old Password</p>
+						<input type="password" name="OldPassword"  class="form-control" placeholder="Old Password">
+						<br><p><span class="glyphicon glyphicon-lock"></span> New Password</p>
+						<input type="password" name="newpassword" id="recovery-email" class="form-control" placeholder="New Password">
+					</div>
+					<div class="col-sm-offset-3">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button type="submit" class="btn btn-custom" data-toggle="modal" data-dismiss="modal" data-target="#forgetmodal1">Change Password</button>
+					</div>
+	 			</div>
+	 		</div>
+	 	</div>
+ 	</form>
  </body>
  </html>

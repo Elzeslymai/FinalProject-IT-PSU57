@@ -38,7 +38,7 @@
 	$pdf->SetFont('cordia','B',14);
 
 	// logo
-	$pdf->Image('images/logo1.png', 15, 20, 80, 20);
+	$pdf->Image('images/invoice1.png', 25, 15, 80, 40);
 
 	//HOTEL SUPPORT
 	$pdf->SetFont('angsana','B',30);
@@ -270,4 +270,6 @@
 	}
 
 	mysqli_close($connect);
+
+	
 ?>

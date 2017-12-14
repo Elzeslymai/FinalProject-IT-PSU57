@@ -32,7 +32,7 @@
 
 
 		<div class="form-group">
-		  <label class="col-md-4 control-label" for="ProductDescription">Product Picture (250x160)</label>  
+		  <label class="col-md-4 control-label" for="ProductDescription">Product Picture (150x200)</label>  
 		  <div class="col-md-5">
 		  <input type="file" name="fileToUpload" id="fileToUpload">
 		    

@@ -162,40 +162,23 @@
 				<h4 class="modal-title">Recovery password</h4>
 			</div>
 			<div class="modal-body">
+			<form action="forget-password-email.php" method="post">
 				<p>your username</p>
-				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+				<input type="text" name="recovery-username" id="recovery-username" class="form-control" >
 				<p>Type your email account</p>
-				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+				<input type="email" name="recovery-email" id="recovery-email" class="form-control">
+			
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<button type="button" class="btn btn-custom" data-toggle="modal" data-dismiss="modal" data-target="#forgetmodal1">Recovery</button>
+				<button type="submit" class="btn btn-custom" data-toggle="modal" >Recovery</button>
 			</div>
+			</form>
 		</div> <!-- /.modal-content -->
 	</div> <!-- /.modal-dialog -->
 </div> <!-- /.modal -->
 
-<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true" id="forgetmodal1">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">
-					<span aria-hidden="true">×</span>
-					<span class="sr-only">Close</span>
-				</button>
-				<h4 class="modal-title">Recovery password</h4>
-			</div>
-			<div class="modal-body">
-				<p><i class="glyphicon glyphicon-ok-sign"></i>link to reset password send to your email</p>
-				
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<a href="https://www.hotmail.com"><button type="button" class="btn btn-custom">Go to Email</button></a>
-			</div>
-		</div> <!-- /.modal-content -->
-	</div> <!-- /.modal-dialog -->
-</div> <!-- /.modal -->
+
 
 <footer id="footer">
     <div class="container">

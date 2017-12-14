@@ -159,7 +159,7 @@
 			                              	<article style="position: relative; width: 100%; opacity: 1;"> 
 											   	<div class="banner-wrap">
 												   	<div class="slider-left">
-														<img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/> 
+														<img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/ style="height: 400px; width: 600px;"> 
 													</div>
 													 <div class="slider-right">
 													    <h2>';
@@ -304,7 +304,7 @@
 					                                       	echo'
 					                                   	</p>
 						                               	<div class="grid_img">
-															<div class="css3"><img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/></div>
+															<div class="css3"><img src="UserSupply/uploads/'.$row['P_filename'].'" alt=""/ style="height: 150px; width: 250px;"></div>
 															<div class="mask1">
 											                    <div class="info">Quick View</div>
 													        </div>

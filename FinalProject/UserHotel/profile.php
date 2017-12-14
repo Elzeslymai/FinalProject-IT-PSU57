@@ -239,13 +239,16 @@
 
 	                        <p style="padding-left: 0px; background-color: rgb(51, 153, 102); display: none;" class="profile-updated"></p><h2>&nbsp; <a class="edit-toggle">Edit Profile</a></h2>
 	                        <br>
-							<p class="col-sm-offset-3"><img src="/FinalProject/images/logo1.png" alt="" ></p>
-							<br><br><br><br>
+							
 	                        <?php
 								$connect = mysqli_connect("localhost","root","","hotelsupport");
 								$sql = 'select * from user where U_id="'.$_SESSION['username'].'"';
 								$result = mysqli_query($connect,$sql);
 								while($row = mysqli_fetch_assoc($result)){
+									echo '<p class="col-sm-offset-3"><img src="/FinalProject/UserAdmin/uploads/'.$row['U_filename'].'" alt="" style="height: 100px; width: 150px;"></p>
+										<br><br><br><br>
+										';
+
 									echo '<p class="col-sm-offset-1"><label>Email.</label><span class="current_data col-sm-offset-1"><span id="ContentPlaceHolder1_litUsername">';
 									echo $row['U_email'];
 									echo '<p class="col-sm-offset-1"><label>Username.</label><span class="current_data col-sm-offset-1"><span id="ContentPlaceHolder1_litUsername">';

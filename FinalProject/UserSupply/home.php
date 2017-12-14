@@ -1345,7 +1345,18 @@
 			        
 			    </div>
 			    <div class="tiles-body" align="middle">
-			        <div class="text-center"><span class="fa fa-list" style="margin-right: 40px;"></span>2</div>
+			        <div class="text-center"><span class="fa fa-list" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+	                        $sql = 'select count(P_id) from product where U_id="'.$_SESSION['username'].'"';
+	                        $result = mysqli_query($connect,$sql);
+	                        while($row = mysqli_fetch_assoc($result)){
+	                        	echo $row['count(P_id)'];
+
+	                        }
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1359,7 +1370,24 @@
 			        <div class="pull-middle">Orders List</div>
 			    </div>
 			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-list-alt" style="margin-right: 40px;"></span>2</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-list-alt" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+
+				        	$sql1 = 'select * from user where U_id="'.$_SESSION['username'].'"';
+	                        $result1 = mysqli_query($connect,$sql1);
+	                        $row1 = mysqli_fetch_assoc($result1);
+
+	                        $sql = 'select count(order_id) from order1 where Supply_name="'.$row1['U_company_name'].'" and status = "Wait for Accept"';
+	                        $result = mysqli_query($connect,$sql);
+	                        while($row = mysqli_fetch_assoc($result)){
+
+	                        	echo $row['count(order_id)'];
+
+	                        }
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1373,7 +1401,24 @@
 			        <div class="pull-middle">Order Status</div>
 			    </div>
 			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-check" style="margin-right: 40px;"></span>2</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-check" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+
+				        	$sql1 = 'select * from user where U_id="'.$_SESSION['username'].'"';
+	                        $result1 = mysqli_query($connect,$sql1);
+	                        $row1 = mysqli_fetch_assoc($result1);
+
+	                        $sql = 'select count(order_id) from order1 where Supply_name="'.$row1['U_company_name'].'" and status != "Wait for Accept" and status != "Complete" and status != "Cancle"';
+	                        $result = mysqli_query($connect,$sql);
+	                        while($row = mysqli_fetch_assoc($result)){
+
+	                        	echo $row['count(order_id)'];
+
+	                        }
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1387,7 +1432,24 @@
 			        <div class="pull-middle">Order History</div>
 			    </div>
 			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-time" style="margin-right: 40px;"></span>10</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-time" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+
+				        	$sql1 = 'select * from user where U_id="'.$_SESSION['username'].'"';
+	                        $result1 = mysqli_query($connect,$sql1);
+	                        $row1 = mysqli_fetch_assoc($result1);
+
+	                        $sql = 'select count(order_id) from order1 where Supply_name="'.$row1['U_company_name'].'" and status != "Wait for Accept" and status != "Accept" and status != "Shipment" and status != "Order Preparation"';
+	                        $result = mysqli_query($connect,$sql);
+	                        while($row = mysqli_fetch_assoc($result)){
+
+	                        	echo $row['count(order_id)'];
+
+	                        }
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1414,7 +1476,24 @@
 	    	</div>
   		</div>-->
 	</div>
-               
+    <br><br><br><br>
+               <div class="col-md-2 col-md-offset-4">
+		        	<a class="info-tiles tiles-blue has-footer" href="/FinalProject/UserManual/UserManual.pdf" target ="_blank">
+					    <img src="/FinalProject/images/Artboard1.png">
+					</a>
+		    	</div>
+
+		    	<div class="col-md-2 ">
+		        	<a class="info-tiles tiles-blue has-footer" href="https://1drv.ms/v/s!AvGnfIIoN9lSiRYZ2mTmVoiJ_DIO" target ="_blank">
+					    <img src="/FinalProject/images/Artboard2.png">
+					</a>
+		    	</div>
+
+		    	<div class="col-md-2 ">
+		        	<a class="info-tiles tiles-blue has-footer" href="https://1drv.ms/v/s!AvGnfIIoN9lSiRW9Qatcp64gkWCW" target ="_blank">
+					    <img src="/FinalProject/images/Artboard3.png">
+					</a>
+		    	</div>           
  	
  </body>
 </html>

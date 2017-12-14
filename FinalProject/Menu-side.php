@@ -101,7 +101,7 @@
 				                    ';
 		                        ?>
 		                        <div class="clearfix"></div>
-		                        <a class="order" href="checkout.php" style="width: 240px;">Make invoice</a>
+		                        <a class="order" href="checkout.php" style="width: 240px;">Make Order</a>
 		                    </div>
                     	</div>
                     </div>

@@ -1340,6 +1340,20 @@
  	<br>
  	<br>
     
+ 		<div class="col-md-4">
+        	<a class="info-tiles tiles-blue has-footer" href="/FinalProject/shop.php">
+			    <div class="tiles-heading">
+			        <div class="pull-middle">Shopping</div>
+			    </div>
+			    <div class="tiles-body">
+			        <div class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-shopping-cart" style="margin-right: 40px;"></span>&nbsp;</div>
+			    </div>
+			    <div class="tiles-footer">
+			    	<div class="pull-middle"><br></div>
+			    </div>
+			</a>
+    	</div>
+
     	<div class="col-md-4">
     	    <a class="info-tiles tiles-inverse has-footer" href="order-status.php">
     		    <div class="tiles-heading">
@@ -1347,7 +1361,18 @@
 			        
 			    </div>
 			    <div class="tiles-body" align="middle">
-			        <div class="text-center"><span class="glyphicon glyphicon-check" style="margin-right: 40px;"></span>2</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-check" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+	                        $sql = 'select count(order_id) from order1 where U_id="'.$_SESSION['username'].'" and status != "Complete" and status != "Cancle"';
+	                        $result = mysqli_query($connect,$sql);
+	                        while($row = mysqli_fetch_assoc($result)){
+	                        	echo $row['count(order_id)'];
+
+	                        }
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1355,20 +1380,6 @@
 			</a>
     	</div>
         
-        
-        <div class="col-md-4">
-        	<a class="info-tiles tiles-blue has-footer" href="invoice-bill.php">
-			    <div class="tiles-heading">
-			        <div class="pull-middle">Invoice Bill</div>
-			    </div>
-			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-usd" style="margin-right: 40px;"></span>2</div>
-			    </div>
-			    <div class="tiles-footer">
-			    	<div class="pull-middle"><br></div>
-			    </div>
-			</a>
-    	</div>
         
         <div class="col-md-4">
         	<a class="info-tiles tiles-midnightblue has-footer" href="order-history.php">
@@ -1376,7 +1387,18 @@
 			        <div class="pull-middle">Order History</div>
 			    </div>
 			    <div class="tiles-body">
-			        <div class="text-center"><span class="glyphicon glyphicon-time" style="margin-right: 40px;"></span>10</div>
+			        <div class="text-center"><span class="glyphicon glyphicon-time" style="margin-right: 40px;"></span>
+			        	<?php
+				        	$connect = mysqli_connect("localhost","root","","hotelsupport");
+	                        $sql = 'select count(order_id) from order1 where U_id="'.$_SESSION['username'].'" and status !="Accept"
+	                        and status !="Shipment" and status !="Order Preparation" and status !="Wait for Accept"';
+	                        $result = mysqli_query($connect,$sql);
+	                        $row = mysqli_fetch_assoc($result);
+	                        	echo $row['count(order_id)'];
+
+	                        mysqli_close($connect);
+				        ?>
+			        </div>
 			    </div>
 			    <div class="tiles-footer">
 			    	<div class="pull-middle"><br></div>
@@ -1403,7 +1425,24 @@
 	    	</div>
   		</div>-->
 	</div>
-               
+    <br><br><br><br>
+               <div class="col-md-2 col-md-offset-4">
+		        	<a class="info-tiles tiles-blue has-footer" href="/FinalProject/UserManual/UserManual.pdf" target ="_blank">
+					    <img src="/FinalProject/images/Artboard1.png">
+					</a>
+		    	</div>
+
+		    	<div class="col-md-2 ">
+		        	<a class="info-tiles tiles-blue has-footer" href="https://1drv.ms/v/s!AvGnfIIoN9lSiRYZ2mTmVoiJ_DIO" target ="_blank">
+					    <img src="/FinalProject/images/Artboard2.png">
+					</a>
+		    	</div>
+
+		    	<div class="col-md-2 ">
+		        	<a class="info-tiles tiles-blue has-footer" href="https://1drv.ms/v/s!AvGnfIIoN9lSiRW9Qatcp64gkWCW" target ="_blank">
+					    <img src="/FinalProject/images/Artboard3.png">
+					</a>
+		    	</div>
  	
  </body>
 </html>

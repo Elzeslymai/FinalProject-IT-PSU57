@@ -12,7 +12,7 @@
 			}
 ?>
 <?php
-	require('Menu-side-Hotel.php');
+	require('Menu-side-hotel.php');
     $connect = mysqli_connect("localhost","root","","hotelsupport");
 	$sql = 'update order1 set status="Cancle" where order_id ='.$_POST['deleteorder'].'';
 	$result = mysqli_query($connect,$sql);

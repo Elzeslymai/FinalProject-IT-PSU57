@@ -31,20 +31,15 @@
  	<div class="container">
     <div class="row">
         <div class="col-md-10 col-sm-offset-1">      
-		<form action="http://kernel.handyform.com.br" method="post"><!-- Não apague ou altere esta linha-->
-		<input type="hidden" name="titulo" value="Obrigado"> <!-- Titulo do Email que será enviado ao visitante exemplo: Obrigado-->
-		<input type="hidden" name="nomedest" value="Thalita"> <!-- Digite o seu nome -->
-		<input type="hidden" name="emaildest" value="oliveirarthalita@gmailcom"> <!-- Seu Email ;D -->
-		<input type="hidden" name="ok" value="http://www.handyform.com.br/url"><!-- Url de retorno exemplo: http://seusite.com/ok.html.html-->
-		<table width="37%" border="0">
+				<table width="37%" border="0">
             <div class="well well-sm">
-                <form>
+                <form action="contact-admin-email.php" method="post">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">
                                 Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                            <input type="text" class="form-control" name="name" placeholder="Enter name" required="required" />
                         </div>
                         <div class="form-group">
                             <label for="email">
@@ -52,16 +47,16 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
                                 </span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                                <input type="email" class="form-control" name="email" placeholder="Enter email" required="required" /></div>
                         </div>
                         <div class="form-group">
                             <label for="subject">
                                 Subject</label>
                             <select id="subject" name="subject" class="form-control" required="required">
                                 <option value="na" selected="">Choose One:</option>
-                                <option value="service">General Customer Service</option>
+                                <option value="General Customer Service">General Customer Service</option>
                                 <option value="suggestions">Suggestions</option>
-                                <option value="product">Product Support</option>
+                                <option value="Product Support">Product Support</option>
                             </select>
                         </div>
                     </div>
@@ -69,7 +64,7 @@
                         <div class="form-group">
                             <label for="name">
                                 Message</label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                            <textarea name="message" name="message" class="form-control" rows="9" cols="25" required="required"
                                 placeholder="Message"></textarea>
                         </div>
                     </div>

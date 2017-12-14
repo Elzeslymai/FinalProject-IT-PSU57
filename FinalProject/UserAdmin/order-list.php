@@ -58,8 +58,8 @@
                     </div>
                     <div class="panel-body">
                     <?php
-                    $connect = mysqli_connect("localhost","root","","hotelsupport");
-
+                        
+                        $connect = mysqli_connect("localhost","root","","hotelsupport");
                         $sql = 'select * from order1';
                         $result = mysqli_query($connect,$sql);
                         while($row = mysqli_fetch_assoc($result)){
@@ -73,7 +73,7 @@
                                     <div class="col-sm-3">
                                         <b>
                                             <u>
-                                                <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                 '.$row['invoiceNo'].'
                                                 </a>
                                             </u>
@@ -105,7 +105,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -138,7 +138,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -171,7 +171,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -204,7 +204,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>
@@ -237,7 +237,7 @@
                                         <div class="col-sm-3">
                                             <b>
                                                 <u>
-                                                    <a href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
+                                                    <a target ="_blank" href="/FinalProject/invoice/'.$row['invoiceNo'].'.pdf">
                                                     '.$row['invoiceNo'].'
                                                     </a>
                                                 </u>

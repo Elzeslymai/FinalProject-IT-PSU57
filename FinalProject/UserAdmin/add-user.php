@@ -28,13 +28,13 @@
  	?>
  	<br>
  	<h1><span class="glyphicon glyphicon-plus-sign col-sm-offset-1"></span> ADD USER</h1>
- 	<form class="form-horizontal" name="form1" method="POST" action="/FinalProject/UserAdmin/add-user-db.php" onSubmit="JavaScript:return fncSubmit();">
+ 	<form class="form-horizontal" name="form1" method="POST" action="/FinalProject/UserAdmin/add-user-db.php" onSubmit="JavaScript:return fncSubmit();" enctype="multipart/form-data">
 	
 
 		<div class="form-group">
-		  <label class="col-md-4 control-label" for="ProductDescription">Profile Picture (250x160)</label>  
+		  <label class="col-md-4 control-label" for="ProductDescription">Product Picture (150x200)</label>  
 		  <div class="col-md-5">
-		  <input type="file" name="fileToUpload" id="fileToUpload" >
+		  <input type="file" name="fileToUpload" id="fileToUpload">
 		    
 		  </div>
 		</div>
@@ -48,22 +48,29 @@
 		</div>
 
 		<!-- Text input-->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="ProductDescription">Username</label>  
-		  <div class="col-md-5">
-		  	<input  type="text" name="Username" placeholder="Username" class="form-control input-md" >
+		<?php
+			$username = "";
+		    $charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		    
-		  </div>
-		</div>
-
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="ProductDescription">Password</label>  
-		  <div class="col-md-5">
-		  <input  type="password" name="Password" placeholder="Password" class="form-control input-md" >
+		    for($i = 0; $i < 8; $i++)
+		    {
+		        $random_int = mt_rand();
+		        $username .= $charset[$random_int % strlen($charset)];
+		   }
+		   echo'<input  type="hidden" name="Username" value="'.$username.'">';
+		?>
+		<?php
+			$password = "";
+		    $charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		    
-		  </div>
-		</div>
-
+		    for($i = 0; $i < 8; $i++)
+		    {
+		        $random_int = mt_rand();
+		        $password .= $charset[$random_int % strlen($charset)];
+		   }
+		   echo'<input  type="hidden" name="Password" value="'.$password.'">';
+		?>
+		
 
 		<!-- Select Basic -->
 		<div class="form-group">
@@ -72,7 +79,7 @@
 		    <select id="typeuser" name="typeuser" class="form-control">
 				<option value="Hotel">Hotel</option>
 				<option value="Supply">Supply</option>
-				<option value="Supply">Admin</option>
+				<option value="Admin">Admin</option>
 		    </select>
 		  </div>
 		</div>

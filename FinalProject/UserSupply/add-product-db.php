@@ -11,6 +11,8 @@ echo $_SESSION['username'];
 
 	$filename = $_SESSION['username'].basename($_FILES["fileToUpload"]["name"]);
 
+	
+
 	$connect = mysqli_connect("localhost","root","","hotelsupport");
 	$sql = 'insert into product values (null,"'.$_SESSION['username'].'","'.$_POST['U_company_name'].'","'.$_POST['ProductName'].'","'.$_POST['Catagories'].'","'.$_POST['Grade'].'","'.$_POST['Price'].'","'.$_POST['Detail'].'","'.$_POST['shipment'].'","'.$_POST['Fee'].'","'.date("y-m-d").'","'.$filename.'")';
 	$result = mysqli_query($connect,$sql);
